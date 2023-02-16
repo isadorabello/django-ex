@@ -122,6 +122,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Indica onde todos os arquivos estáticos estão
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'setup/static')
+]
+
+# python manage.py collectstatic
+# Caminho absoluto para o diretorio onde o python vai coletar os arquivos estátios para a implatação
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

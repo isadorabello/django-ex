@@ -7,4 +7,10 @@ from django.shortcuts import render
 def index(request):
     # função que responde a requisição HTTP da página WEB
     # HttpResponse('<h1>Web Test</h1>')
-    return render(request, 'index.html')
+    return render(request, 'galeria/index.html')
+
+
+def imagem(request):
+    # função que responde a requisição HTTP da página WEB
+    # HttpResponse('<h1>Web Test</h1>')
+    return render(request, 'galeria/imagem.html')
