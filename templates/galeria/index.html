@@ -19,12 +19,9 @@
         <div class="cards">
             <h2 class="cards__titulo">Navegue pela galeria</h2>
             <ul class="cards__lista">
+                {% for foto_id, info in cards.items %}
                 {% include 'galeria/partials/_post.html' %}
-                {% include 'galeria/partials/_post.html' %}
-                {% include 'galeria/partials/_post.html' %}
-                {% include 'galeria/partials/_post.html' %}
-                {% include 'galeria/partials/_post.html' %}
-                {% include 'galeria/partials/_post.html' %}
+                {% endfor %}
             </ul>
         </div>
     </section>
