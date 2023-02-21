@@ -17,3 +17,13 @@ def imagem(request, foto_id):
     # função que responde a requisição HTTP da página WEB
     # HttpResponse('<h1>Web Test</h1>')
     return render(request, 'galeria/imagem.html', {"foto": fotografia})
+
+def buscar(request):
+    fotografias = Fotografia.objects.order_by("-data_fotografia").filter(publicada=True)
+    
+    if "buscar" in request.GET:
+        nome_busca = request.GET['buscar']
+        if nome_busca:
+            fotografias = fotografias.filter(nome__icontains=nome_busca)
+
+    return render(request, 'galeria/buscar.html', {"cards": fotografias})
