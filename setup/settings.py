@@ -131,6 +131,11 @@ STATICFILES_DIRS = [
 # Caminho absoluto para o diretorio onde o python vai coletar os arquivos estátios para a implatação
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# diretório de midia
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+MEDIA_URL = "/media/"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
