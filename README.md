@@ -1,7 +1,7 @@
 # django-ex
 
-# Gostou do projeto? 
-# Quer baixar na sua máquina?
+## Gostou do projeto? 
+### Quer baixar na sua máquina?
 
 ### Segue o fio de como fazer isso:
 
