@@ -1,9 +1,9 @@
 # django-ex
 
-## gostou do projeto? 
-## quer baixar na sua máquina?
+## Gostou do projeto? 
+## Quer baixar na sua máquina?
 
-### segue o fio de como fazer isso:
+### Segue o fio de como fazer isso:
 
 ### 1- Primeiro, você vai precisar ter o python instalado:
 ```
