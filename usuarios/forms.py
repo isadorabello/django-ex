@@ -1,7 +1,7 @@
 from django import forms
 
 class LoginForms(forms.Form):
-    nomeLogin = forms.CharField(
+    nome_login = forms.CharField(
         label="Nome de Login",
         required=True,
         max_length=150,
@@ -20,7 +20,7 @@ class LoginForms(forms.Form):
     )
 
 class CadastroForms(forms.Form):
-    nomeCadastro= forms.CharField(
+    nome_cadastro= forms.CharField(
         label="Nome",
         required=True,
         max_length=150,
@@ -28,7 +28,7 @@ class CadastroForms(forms.Form):
             attrs={"class": "form-control", "placeholder": "Digite seu nome completo. Ex: Maria da Silva"}
         )
     )
-    emailCadastro = forms.EmailField(
+    email_cadastro = forms.EmailField(
         label="Email",
         required=True,
         max_length=150,
@@ -45,7 +45,7 @@ class CadastroForms(forms.Form):
                    "placeholder": "Digite sua senha"}
         )
     )
-    senhaConfirmar = forms.CharField(
+    senha_confirmar = forms.CharField(
         label="Confirmar de Senha",
         required=True,
         max_length=80,
