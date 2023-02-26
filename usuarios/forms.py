@@ -1,12 +1,12 @@
 from django import forms
 
 class LoginForms(forms.Form):
-    emailLogin = forms.EmailField(
-        label="Email",
+    nomeLogin = forms.CharField(
+        label="Nome de Login",
         required=True,
         max_length=150,
-        widget=forms.EmailInput(
-            attrs={"class": "form-control", "placeholder": "Digite seu e-mail"}
+        widget=forms.TextInput(
+            attrs={"class": "form-control", "placeholder": "Digite seu nome de Login"}
         )
     )
     senha = forms.CharField(
