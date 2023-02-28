@@ -21,6 +21,11 @@
     <div class="pagina-inicial">
         <header class="cabecalho">
             <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Alura Space" />
+            {% for message in messages %}
+            <div class="alert alert-primary">
+                <p id="messages">{{message}}</p>
+            </div>
+            {% endfor %}
             <div class="cabecalho__busca">
                     <form class="busca__fundo" action="{% url 'buscar' %}">
                         <input class="busca__input" type="text" name="buscar" placeholder="O que você procura?">
