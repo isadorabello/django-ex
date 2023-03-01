@@ -55,3 +55,13 @@ class CadastroForms(forms.Form):
         )
     )
 
+    def clean_nome_cadastro(self):
+        nome = self.changed_data.get("nome_cadastro")
+
+        if nome:
+            nome=nome.strip()
+            if " " in nome:
+                raise forms.ValidationError("Digite um nome válido (sem espaços)!")
+            else:
+                return nome
+
