@@ -25,7 +25,7 @@ class CadastroForms(forms.Form):
         required=True,
         max_length=150,
         widget=forms.TextInput(
-            attrs={"class": "form-control", "placeholder": "Digite seu nome completo. Ex: Maria da Silva"}
+            attrs={"class": "form-control", "placeholder": "Digite seu nome completo. Ex: MariaSilva"}
         )
     )
     email_cadastro = forms.EmailField(
@@ -56,12 +56,25 @@ class CadastroForms(forms.Form):
     )
 
     def clean_nome_cadastro(self):
-        nome = self.changed_data.get("nome_cadastro")
+        nome = self.cleaned_data.get('nome_cadastro')
 
         if nome:
-            nome=nome.strip()
+            nome = nome.strip()
             if " " in nome:
-                raise forms.ValidationError("Digite um nome válido (sem espaços)!")
+                raise forms.ValidationError(
+                    'Espaços não são permitidos nesse campo')
             else:
                 return nome
+
+    def clean_senha_confirmar(self):
+        senha = self.cleaned_data.get('senha')
+        senha_confirmar = self.cleaned_data.get('senha_confirmar')
+
+        if senha and senha_confirmar:
+            if senha != senha_confirmar:
+                raise forms.ValidationError('Senhas não são iguais')
+            else:
+                return senha_confirmar
+            
+
 
