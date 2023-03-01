@@ -1,10 +1,16 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from galeria.models import Fotografia
+from django.contrib import messages
 # from django.http import HttpResponse
 
 # Create your views here.
 
 def index(request):
+    if not request.user.is_authenticated:
+        messages.error(request, "Usuário não logado")
+        return redirect('login')
+
+
     fotografias = Fotografia.objects.order_by(
         "-data_fotografia").filter(publicada=True)
     # função que responde a requisição HTTP da página WEB
@@ -19,6 +25,11 @@ def imagem(request, foto_id):
     return render(request, 'galeria/imagem.html', {"foto": fotografia})
 
 def buscar(request):
+    if not request.user.is_authenticated:
+        messages.error(request, "Usuário não logado")
+        return redirect('login')
+    
+
     fotografias = Fotografia.objects.order_by("-data_fotografia").filter(publicada=True)
     
     if "buscar" in request.GET:
